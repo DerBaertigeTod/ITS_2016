@@ -59,7 +59,7 @@ const unsigned long dmxTimeoutMillis = 10000UL;
 // if you are using other shields you should look it up 
 // yourself
 //
-////#define RXEN_PIN                2
+#define RXEN_PIN                2
 
 
 // Configure a DMX slave controller
@@ -82,8 +82,7 @@ void setup() {
   
  
   //set softwareserial
-   mySerial.begin(57600);
-  mySerial.println("Hello, world?");
+   mySerial.begin(115200);
   dmx_slave.onReceiveComplete ( OnFrameReceiveComplete );
 }
 
