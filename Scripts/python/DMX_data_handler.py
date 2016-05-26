@@ -1,4 +1,3 @@
-import smbus
 import serial
 from conf import *
 #Initializing
@@ -10,28 +9,28 @@ ser = serial.Serial(
     bytesize=serial.EIGHTBITS,
     timeout=1
 )
-bus = smbus.SMBus(1)
+
 #FUNCTIONS
 
 
 def build_array(channels=512, value=0, single=False):
     "Produces an array in either Hex or Decimal for each DMX Channel and returns it"
-    array = []
+    _array[512] = 0
     if not single:
         for x in range(0, channels):
-            array[x] = value
+            _array[x] = value
     else:
-        array[channels] = value
+        _array[channels] = value
     
 
     if kind == 'serial':
-        for x in range(len(array)):
-            array[x] = str(array[x])
-        return array.join(',')
+        for x in range(len(_array)):
+            _array[x] = str(_array[x])
+        return _array.join(',')
     else:
-        for x in range(len(array)):
-            array[x] = hex(array[x])
-        return array
+        for x in range(len(_array)):
+            _array[x] = hex(_array[x])
+        return _array
 
 
 
@@ -50,12 +49,3 @@ def read_serial_data():
     else:
         return 0
 
-
-def read_i2c_data():
-    "Reads the incomming I2C DATA"
-    values = bus.read_i2c_block_data(
-        conf.DEVICE_ADDRESS,
-        conf.DEVICE_REG_DMX0_IN)
-    for x in range(len(values)):
-        dmx = values.split(',')
-    return dmx
