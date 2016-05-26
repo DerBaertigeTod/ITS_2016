@@ -1,0 +1,23 @@
+Ideen zum Projektnamen
+"Mood is Music", "Light your Music"
+
+Musik/Gernresteuerung per Farbe/Licht
+
+Aufgabenbereiche:
+-Licht und Farbsteuerung, Interpretation vom DMX-Signal
+-Serverprogrammierung
+-GUI
+-(halbwegs) intelligente Datenbank
+	Like und Dislike Funktion
+-gitrepository
+
+Diskussionsbedarf, Gedankensammlung:
+-Wie intelligent muss die Datenbank sein, damit die Musik sinnvoll auf Farb und Lichtver‰nderungen reagiert?
+-Welche Gernres zu welcher Farbe, ggf. mehrere Gernres auf eine Farbe?
+-Benutzerprofile, damit die Datenbank nicht jedes mal neu abstimmen muss
+-Was steuert die Lichthelligkeit?
+-GUI muss sich an verschieden groﬂe Displays anpassen
+-Wlan steuerbar
+-optional ohne DMX sondern mit Kamera die Licht und Farbe interpretiert steuerbar, da so gut wie keiner Lampen mit DMXausgang hat
+
+
