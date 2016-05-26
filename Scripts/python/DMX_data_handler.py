@@ -14,7 +14,7 @@ bus = smbus.SMBus(1)
 #FUNCTIONS
 
 
-def build_array(channels=512, value=0, kind='serial', single=False):
+def build_array(channels=512, value=0, single=False):
     "Produces an array in either Hex or Decimal for each DMX Channel and returns it"
     array = []
     if not single:
@@ -22,6 +22,8 @@ def build_array(channels=512, value=0, kind='serial', single=False):
             array[x] = value
     else:
         array[channels] = value
+    
+
     if kind == 'serial':
         for x in range(len(array)):
             array[x] = str(array[x])
@@ -32,18 +34,11 @@ def build_array(channels=512, value=0, kind='serial', single=False):
         return array
 
 
-def send_i2c_data(channels, value, array):
-    "Sends a values to DMX channels via I2C"
-    bus.write_i2c_block_data(
-        conf.DEVICE_ADDRESS,
-        conf.DEVICE_REG_DMX0_OUT,
-        build_array(channels, value, 'i2c')
-        )
 
 
-def send_serial_data(channels, value, array):
+def send_serial_data(channels, value):
     "Sends a values to DMX channels via Serial"
-    ser.write('['+build_array(channels, value, 'serial')+']')
+    ser.write(build_array(channels, value, 'serial'))
 
 
 def read_serial_data():
