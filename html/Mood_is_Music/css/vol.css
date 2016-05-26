@@ -1,0 +1,126 @@
+
+input[type='range'] {
+  border: solid 4em transparent;
+  align-self: center;
+  padding: 0;
+  width: 19.5em;
+  height: 3.375em;
+  border-radius: .25em;
+  background: linear-gradient(#eabd22, #eabd22) no-repeat left 7.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 8.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 9.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 10.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 11.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 12.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 13.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 14.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 15.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 16.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 17.75em bottom 7.375em, linear-gradient(#eabd22, #eabd22) no-repeat left 18.75em bottom 7.375em;
+  background-origin: border-box;
+  background-size: 0.875em 0.0625em, 0.875em 0.125em, 0.875em 0.1875em, 0.875em 0.25em, 0.875em 0.3125em, 0.875em 0.375em, 0.875em 0.4375em, 0.875em 0.5em, 0.875em 0.5625em, 0.875em 0.625em, 0.875em 0.6875em, 0.875em 0.75em;
+  font-size: 1em;
+  cursor: pointer;
+  /* slider components */
+}
+input[type='range'], input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  border: none;
+  padding: .375em;
+  width: 19.5em;
+  height: 2.25em;
+  border-radius: 1.125em;
+  box-shadow: inset 0 -1px 1px #fff, inset 0 .5em .5em #c4c4c4, inset 0 0 0 .375em #efefef,  inset 0 1px .125em .375em black,  inset 0 0 0 1px #eee;
+  background: linear-gradient(#f5f5f5, #eeeeee 35%, #bfbfbf);
+}
+.js input[type='range']::-webkit-slider-runnable-track {
+  background: linear-gradient(#f8dd36, #d88606) no-repeat, linear-gradient(#f5f5f5, #eeeeee 35%, #bfbfbf);
+  background-size: 50% 100%, 100% 100%;
+}
+input[type='range']::-moz-range-track {
+  box-sizing: border-box;
+  border: none;
+  padding: .375em;
+  width: 19.5em;
+  height: 2.25em;
+  border-radius: 1.125em;
+  box-shadow: inset 0 -1px 1px #fff, inset 0 .5em .5em #c4c4c4, inset 0 0 0 .375em #efefef,  inset 0 1px .125em .375em black,  inset 0 0 0 1px #eee;
+  background: linear-gradient(#f5f5f5, #eeeeee 35%, #bfbfbf);
+}
+.js input[type='range']::-moz-range-track {
+  background: linear-gradient(#f8dd36, #d88606) no-repeat, linear-gradient(#f5f5f5, #eeeeee 35%, #bfbfbf);
+  background-size: 50% 100%, 100% 100%;
+}
+input[type='range']::-ms-track {
+  box-sizing: border-box;
+  border: none;
+  padding: .375em;
+  width: 19.5em;
+  height: 2.25em;
+  border-radius: 1.125em;
+  box-shadow: inset 0 -1px 1px #fff, inset 0 .5em .5em #c4c4c4, inset 0 0 0 .375em #efefef,  inset 0 1px .125em .375em black,  inset 0 0 0 1px #eee;
+  background: linear-gradient(#f5f5f5, #eeeeee 35%, #bfbfbf);
+  color: transparent;
+}
+input[type='range']::-ms-fill-lower {
+  border-radius: 1.125em;
+  box-shadow: inset 0 1px .25em #777;
+  background: linear-gradient(#f8dd36, #d88606) no-repeat;
+}
+input[type='range']::-ms-tooltip, input[type='range']::-ms-fill-upper {
+  display: none;
+}
+input[type='range']::-webkit-slider-thumb {
+  margin-top: -.375em;
+  box-sizing: border-box;
+  border: none;
+  padding: .375em;
+  width: 2.25em;
+  height: 2.25em;
+  border-radius: 50%;
+  box-shadow: 0 .375em .5em -.125em #808080,  inset 0 -.25em .5em -.125em #bbb;
+  background: linear-gradient(#c5c5c5, #efefef) content-box, linear-gradient(#fdfdfd, #c4c4c4) border-box;
+  cursor: ew-resize;
+}
+input[type='range']::-moz-range-thumb {
+  box-sizing: border-box;
+  border: none;
+  padding: .375em;
+  width: 2.25em;
+  height: 2.25em;
+  border-radius: 50%;
+  box-shadow: 0 .375em .5em -.125em #808080,  inset 0 -.25em .5em -.125em #bbb;
+  background: linear-gradient(#c5c5c5, #efefef) content-box, linear-gradient(#fdfdfd, #c4c4c4) border-box;
+  cursor: ew-resize;
+}
+input[type='range']::-ms-thumb {
+  box-sizing: border-box;
+  border: none;
+  padding: .375em;
+  width: 2.25em;
+  height: 2.25em;
+  border-radius: 50%;
+  box-shadow: 0 .375em .5em -.125em #808080,  inset 0 -.25em .5em -.125em #bbb;
+  background: linear-gradient(#c5c5c5, #efefef) content-box, linear-gradient(#fdfdfd, #c4c4c4) border-box;
+  cursor: ew-resize;
+}
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range'] /deep/ #track {
+  position: relative;
+}
+input[type='range']::-webkit-slider-runnable-track:before, input[type='range']::-webkit-slider-runnable-track:after,
+input[type='range'] /deep/ #track:before,
+input[type='range'] /deep/ #track:after {
+  position: absolute;
+  bottom: 2.475em;
+  text-transform: uppercase;
+}
+input[type='range']::-webkit-slider-runnable-track:before,
+input[type='range'] /deep/ #track:before {
+  left: 1em;
+  content: 'min';
+}
+input[type='range']::-webkit-slider-runnable-track:after,
+input[type='range'] /deep/ #track:after {
+  right: 1em;
+  text-align: right;
+  content: 'max';
+}
+input[type='range']:focus {
+  outline: none;
+  box-shadow: 0 .125em .125em #fff;
+  background-color: rgba(255, 255, 255, 0.32);
+}

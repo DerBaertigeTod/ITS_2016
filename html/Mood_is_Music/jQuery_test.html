@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery TEST</title>
+	
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/vol.css">
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/moodismusic.js"></script>
+	<script type="text/javascript" src="js/vol.js"></script>
+	
+	<style>
+  #feedback { font-size: 1.4em; }
+  #selectable .ui-selecting { background: #FECA40; }
+  #selectable .ui-selected { background: #F39814; color: white; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
+  #selectable li { margin: 3px; padding: 1px; float: left; width: 100px; height: 80px; font-size: 4em; text-align: center; }
+  </style>
+  <script>
+  $(function() {
+    $( "#selectable" ).selectable();
+  });
+  </script>
+  
+    <style>
+  #red, #green, #blue {
+    float: left;
+    clear: left;
+    width: 300px;
+    margin: 15px;
+  }
+  #swatch {
+    width: 120px;
+    height: 100px;
+    margin-top: 18px;
+    margin-left: 350px;
+    background-image: none;
+  }
+  #red .ui-slider-range { background: #ef2929; }
+  #red .ui-slider-handle { border-color: #ef2929; }
+  #green .ui-slider-range { background: #8ae234; }
+  #green .ui-slider-handle { border-color: #8ae234; }
+  #blue .ui-slider-range { background: #729fcf; }
+  #blue .ui-slider-handle { border-color: #729fcf; }
+  </style>
+  <script>
+  function hexFromRGB(r, g, b) {
+    var hex = [
+      r.toString( 16 ),
+      g.toString( 16 ),
+      b.toString( 16 )
+    ];
+    $.each( hex, function( nr, val ) {
+      if ( val.length === 1 ) {
+        hex[ nr ] = "0" + val;
+      }
+    });
+    return hex.join( "" ).toUpperCase();
+  }
+  function refreshSwatch() {
+    var red = $( "#red" ).slider( "value" ),
+      green = $( "#green" ).slider( "value" ),
+      blue = $( "#blue" ).slider( "value" ),
+      hex = hexFromRGB( red, green, blue );
+    $( "#swatch" ).css( "background-color", "#" + hex );
+  }
+  $(function() {
+    $( "#red, #green, #blue" ).slider({
+      orientation: "horizontal",
+      range: "min",
+      max: 255,
+      value: 127,
+      slide: refreshSwatch,
+      change: refreshSwatch
+    });
+    $( "#red" ).slider( "value", 255 );
+    $( "#green" ).slider( "value", 140 );
+    $( "#blue" ).slider( "value", 60 );
+  });
+  </script>
+  
+    <style>
+  #toolbar {
+    padding: 4px;
+    display: inline-block;
+  }
+  /* support: IE7 */
+  *+html #toolbar {
+    display: inline;
+  }
+  </style>
+  <script>
+  $(function() {
+    $( "#beginning" ).button({
+      text: false,
+      icons: {
+        primary: "ui-icon-seek-start"
+      }
+    });
+    $( "#rewind" ).button({
+      text: false,
+      icons: {
+        primary: "ui-icon-seek-prev"
+      }
+    });
+    $( "#play" ).button({
+      text: false,
+      icons: {
+        primary: "ui-icon-play"
+      }
+    })
+    .click(function() {
+      var options;
+      if ( $( this ).text() === "play" ) {
+        options = {
+          label: "pause",
+          icons: {
+            primary: "ui-icon-pause"
+          }
+        };
+      } else {
+        options = {
+          label: "play",
+          icons: {
+            primary: "ui-icon-play"
+          }
+        };
+      }
+      $( this ).button( "option", options );
+    });
+    $( "#stop" ).button({
+      text: false,
+      icons: {
+        primary: "ui-icon-stop"
+      }
+    })
+    .click(function() {
+      $( "#play" ).button( "option", {
+        label: "play",
+        icons: {
+          primary: "ui-icon-play"
+        }
+      });
+    });
+    $( "#forward" ).button({
+      text: false,
+      icons: {
+        primary: "ui-icon-seek-next"
+      }
+    });
+    $( "#end" ).button({
+      text: false,
+      icons: {
+        primary: "ui-icon-seek-end"
+      }
+    });
+    $( "#shuffle" ).button();
+    $( "#repeat" ).buttonset();
+  });
+  </script>
+  
+  
+  
+</head>
+<body>
+	<h1>Draggable<h1>
+	<span id="drag">Drag me</span>
+	
+	<h2>Mediaplayer</h2>
+	<div id="toolbar" class="ui-widget-header ui-corner-all">
+	
+  <button id="beginning">go to beginning</button>
+  <button id="rewind">rewind</button>
+  <button id="play">play</button>
+  <button id="stop">stop</button>
+  <button id="forward">fast forward</button>
+  <button id="end">go to end</button>
+ 
+  <input type="checkbox" id="shuffle"><label for="shuffle">Shuffle</label>
+ 
+  <span id="repeat">
+    <input type="radio" id="repeat0" name="repeat" checked="checked"><label for="repeat0">No Repeat</label>
+    <input type="radio" id="repeat1" name="repeat"><label for="repeat1">Once</label>
+    <input type="radio" id="repeatall" name="repeat"><label for="repeatall">All</label>
+  </span>
+</div>
+
+	<h2>Volume</h2>
+	<input id="vol" type='range'/>
+
+	<h3>Colorpicker</h3>
+	<p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+  <span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"></span>
+  Simple Colorpicker
+</p>
+ 
+<div id="red"></div>
+<div id="green"></div>
+<div id="blue"></div>
+ 
+<div id="swatch" class="ui-widget-content ui-corner-all"></div>
+ 
+ <br>
+ 
+ 	<h4>Selectable Grid</h4>
+	<ol id="selectable">
+  <li class="ui-state-default">1</li>
+  <li class="ui-state-default">2</li>
+  <li class="ui-state-default">3</li>
+  <li class="ui-state-default">4</li>
+  <li class="ui-state-default">5</li>
+  <li class="ui-state-default">6</li>
+  <li class="ui-state-default">7</li>
+  <li class="ui-state-default">8</li>
+  <li class="ui-state-default">9</li>
+  <li class="ui-state-default">10</li>
+  <li class="ui-state-default">11</li>
+  <li class="ui-state-default">12</li>
+</ol>
+
+
+</body>
+</html>
