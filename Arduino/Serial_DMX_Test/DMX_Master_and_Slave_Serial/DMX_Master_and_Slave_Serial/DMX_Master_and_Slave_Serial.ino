@@ -4,8 +4,6 @@
 #include <SoftwareSerial.h>
 #include <DmxSimple.h>
 SoftwareSerial mySerial(10, 11); // RX, TX
-unsigned long       lastFrameReceivedTime;
-const unsigned long dmxTimeoutMillis = 10000UL;
 int number_of_channels = 256;
 int channels_with_vals[512] = {0};
 #define DMX_SLAVE_CHANNELS   number_of_channels 
