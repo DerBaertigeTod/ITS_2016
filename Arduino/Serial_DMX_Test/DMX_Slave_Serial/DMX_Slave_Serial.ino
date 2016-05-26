@@ -84,20 +84,15 @@ void setup() {
   //set softwareserial
    mySerial.begin(115200);
   dmx_slave.onReceiveComplete ( OnFrameReceiveComplete );
+   mySerial.println("HY PI How are you???!!!!");
+   delay(2000);
 }
 
 
 // the loop routine runs over and over again forever:
 void loop() 
 {
-  //
-  // EXAMPLE DESCRIPTION
-  //
-  // If the first channel comes above 50% the led will switch on
-  // and below 50% the led will be turned off
-  
-  // NOTE:
-  // getChannelValue is relative to the configured startaddress
+ 
   
    unsigned long now = millis();
   if ( now - lastFrameReceivedTime > dmxTimeoutMillis )
