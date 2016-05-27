@@ -1,4 +1,5 @@
 import serial
+import time
 from conf import *
 #Initializing
 ser = serial.Serial(
@@ -10,33 +11,32 @@ ser = serial.Serial(
     timeout=1
 )
 
-#FUNCTIONS
 
-
-def build_array(channels=512, value=0, single=False):
+def build_array(channels=512, value=0, kind='serial', single=False):
     "Produces an array in either Hex or Decimal for each DMX Channel and returns it"
-    _array[512] = 0
+    _array = range(512)
+    kette = ""
     if not single:
         for x in range(0, channels):
             _array[x] = value
     else:
         _array[channels] = value
-    
 
     if kind == 'serial':
-        for x in range(len(_array)):
+        first = True
+        for x in xrange(0, channels):
             _array[x] = str(_array[x])
-        return _array.join(',')
-    else:
-        for x in range(len(_array)):
-            _array[x] = hex(_array[x])
-        return _array
-
-
+            if first:
+                kette = str(_array[x])
+                first = False
+        else:
+                kette = kette+'&'+str(_array[x])
+        return (kette+'\n').encode('ascii')
 
 
 def send_serial_data(channels, value):
     "Sends a values to DMX channels via Serial"
+    ser.write(chr(13).encode('ascii'))
     ser.write(build_array(channels, value, 'serial'))
 
 
@@ -48,4 +48,3 @@ def read_serial_data():
         return dmx
     else:
         return 0
-

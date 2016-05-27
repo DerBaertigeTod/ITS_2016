@@ -48,8 +48,6 @@ int channelid=0;
   char* command = strtok(input, "&");
   while (command != 0)
   {
-      
-          
           int value = atoi(command);
           channels_with_vals[channelid] = value;
       // Find the next command in input string
@@ -57,12 +55,11 @@ int channelid=0;
       channelid++;
     
     mySerial.print(channelid);
-    
+    mySerial.print(' : ');
     mySerial.println(value);
     }
     mySerial.print("SEND DATA");
     mySerial.println(channels_with_vals[2]);
-    delay(3000);
    sending(); 
 }
 
@@ -74,7 +71,7 @@ void setup() {
    mySerial.begin(115200);
    mySerial.setTimeout(100);
   initalisierung();
-  mySerial.println("HY PI V1");
+  mySerial.println("HY PI I'm Version 2");
   
 }
 void loop(){
@@ -83,7 +80,7 @@ void loop(){
    read_values();
   }
   else{
-   // receiving();
+   receiving();
   }
   
 }
