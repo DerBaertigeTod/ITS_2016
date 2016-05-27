@@ -1,0 +1,435 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"value",
+				"values"
+			],
+			[
+				"A",
+				"Abschreibung"
+			],
+			[
+				"int",
+				"int"
+			],
+			[
+				"In",
+				"Inflation"
+			],
+			[
+				"Ver",
+				"Vertragslaufzeit"
+			],
+			[
+				"con",
+				"console.Console(stdout, stderr);"
+			],
+			[
+				"pause_",
+				"pause_state"
+			],
+			[
+				"pause_s",
+				"paused_state"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"va",
+				"value2"
+			],
+			[
+				"onc",
+				"onchange	Attr"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"s",
+				"socket"
+			],
+			[
+				"P",
+				"PORT"
+			],
+			[
+				"htt",
+				"httpServer"
+			],
+			[
+				"req",
+				"requestHandler"
+			],
+			[
+				"Zyn",
+				"ZyncColumn"
+			],
+			[
+				"zyn",
+				"zync_user"
+			],
+			[
+				"API",
+				"API_KEY"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "Package Control: inst",
+		"selected_items":
+		[
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"css",
+				"CleanCSS: Clean current file"
+			],
+			[
+				"clean",
+				"CleanCSS: Clean current file"
+			],
+			[
+				"clea",
+				"CleanCSS: Clean current file"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"run",
+			"ls",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/axell/Documents/GitHub/ITS_2016",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/node_modules"
+	],
+	"file_history":
+	[
+		"/C/Users/axell/Documents/GitHub/ITS_2016/Arduino Sketcheseses/dimmer_dmx_test/dimmer_dmx_test.ino",
+		"/C/Users/axell/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/axell/AppData/Roaming/Sublime Text 3/Packages/User/C++.sublime-settings",
+		"/C/Users/axell/Documents/Arduino/libraries/DmxSimple/DmxSimple.cpp",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/Scripts/python/DMX_data_handler.py",
+		"/C/Users/axell/Documents/GitHub/iot/raspi/Labor2_MT/python/client.py",
+		"/C/Users/axell/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/axell/Documents/RasViMap/ola-0.10.1_2/plugins/uartdmx/.libs/UartWidget.gcda",
+		"/C/Users/axell/Documents/RasViMap/ola-0.10.1/plugins/uartdmx/UartDmxDevice.cpp",
+		"/C/Users/axell/Downloads/TOWN_www_town_ag_0DAY_APPS_CadSoft_Computer_EAGLE_Professional_v7_2_0_AMPED/amped.nfo",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/index.html",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/html_02(1)/css/index.css",
+		"/C/Users/axell/Documents/GitHub/RasViMap/Scripts/install.sh",
+		"/C/Users/axell/Documents/GitHub/RasViMap/Scripts/python/write_serial.py",
+		"/C/Users/axell/Documents/RasViMap/RasViMap.js",
+		"/C/Users/axell/Documents/GitHub/RasViMap/APP/web_server/index.html",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/html_02(1)/index.html",
+		"/C/Users/axell/Documents/GitHub/RasViMap/Scripts/python/read_serial.py",
+		"/C/Users/axell/Documents/GitHub/RasViMap/APP/package.json",
+		"/C/Users/axell/Desktop/Unbenannt.htm",
+		"/F/config.txt",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/html_02/css/site_global.css",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/html_02/index.html",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/html_02/css/index.css",
+		"/C/Users/axell/Documents/RasViMap/V2/index.html",
+		"/C/xampp/htdocs/08-flat-shading.html",
+		"/C/xampp/htdocs/04-fragmentshader.html",
+		"/C/Users/axell/Documents/GitHub/RasViMap/README.md",
+		"/C/Users/axell/Desktop/ping",
+		"/F/.config",
+		"/F/boot.scr",
+		"/C/Users/axell/Documents/MOSI/node_projects/websockets/app.js",
+		"/C/Users/axell/Documents/MOSI/node_projects/test1.js",
+		"/F/cmdline.txt",
+		"/Z/websockets/app.js",
+		"/Z/websockets/public/index.html",
+		"/Z/websockets/public/graystone/buchhaendler.html",
+		"/C/Users/axell/AppData/Roaming/Kodi/userdata/advancedsettings.xml",
+		"/Z/websockets/public/code.js",
+		"/C/Users/axell/AppData/Roaming/Kodi/kodi.log",
+		"/E/config.txt",
+		"/C/Users/axell/Documents/MOSI/node_projects/websockets/public/code.js",
+		"/C/Users/axell/Documents/MOSI/node_projects/websockets/public/index.html",
+		"/C/Users/axell/Documents/MOSI/node_projects/statichtml.js",
+		"/C/Users/axell/Documents/MOSI/node_projects/express.js",
+		"/C/Users/axell/Documents/MOSI/node_projects/test2.js",
+		"/C/Users/axell/Documents/MOSI/node_projects/packadge.json",
+		"/C/Users/axell/Documents/MOSI/node_projects/websockets/package.json",
+		"/C/msys/1.0/etc/fstab",
+		"/C/adbFire/adbfire.log",
+		"/C/Users/axell/OneDrive/ARBEIT/Werkvoll/MAYASCRIPT/MayaMultiRenderer.py",
+		"/C/Users/axell/Downloads/bjornd-jvectormap-2.0.4-0-ga0e5497/bjornd-jvectormap-a0e5497/LICENSE-AGPL",
+		"/C/Users/axell/Downloads/bjornd-jvectormap-2.0.4-0-ga0e5497/bjornd-jvectormap-a0e5497/jquery-jvectormap.js",
+		"/C/Users/axell/Downloads/jquery-jvectormap-2.0.3.min.js",
+		"/C/Users/axell/OneDrive/ARBEIT/Werkvoll/MAYASCRIPT/Utility.py",
+		"/C/Users/axell/OneDrive/ARBEIT/Werkvoll/MAYASCRIPT/FileNameGenerator.py",
+		"/C/Users/axell/OneDrive/ARBEIT/Werkvoll/MAYASCRIPT/BaseWindow.py",
+		"/C/Users/axell/Downloads/xbmc_videodb_2016-03-22/videodb.xml",
+		"/C/msys/1.0/etc/fstab.sample",
+		"/C/Users/axell/Downloads/style.css",
+		"/C/Users/axell/AppData/Local/Temp/fz3temp-1/style.css"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"80",
+			"line",
+			"LEDOUT0",
+			"'http://",
+			"http://dev.dawolke.de/workspace/GGEW/wp-content/plugins/PS-Solar-Calc/assets/css/fonts/",
+			"url('dev",
+			"src: local('☺'), ",
+			"http://dev",
+			"url('../fonts/",
+			"content",
+			"src: url('../fonts/",
+			"           ",
+			"[]",
+			">",
+			"-",
+			"file",
+			"IL",
+			"!important",
+			"\\n",
+			"else\n    if",
+			"\\(int\\)\\$options\\['[a-z,A-Z]*'\\]",
+			"$options",
+			"C6",
+			"C41",
+			"A6",
+			"A5",
+			"$Perioden",
+			"A4",
+			"A3",
+			"A2",
+			"A1",
+			"\\n",
+			"max",
+			"Flaeche",
+			"else",
+			"\\n",
+			"   ",
+			"    ",
+			"   ",
+			"    ",
+			"%",
+			"\\",
+			"<runtime>0<"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"DMX0",
+			"'",
+			"http://https://ggew-exellent1988.c9users.io/wp-content/plugins/PS-Solar-Calc/assets/fonts/",
+			"url('http://dev",
+			"src: ",
+			"dev",
+			"url('http://dev.dawolke.de/workspace/GGEW/wp-content/plugins/PS-Solar-Calc/assets/css/fonts/",
+			"src: url('http://dev.dawolke.de/workspace/GGEW/wp-content/plugins/PS-Solar-Calc/assets/css/fonts/",
+			"",
+			"[ ]",
+			"-[] ",
+			">",
+			",",
+			"elseif",
+			"($0)",
+			"($1)",
+			"(/1)",
+			"($1)",
+			"({})",
+			"(\\(int\\)\\$options\\['[a-z,A-Z]*'\\])",
+			"(int)$options",
+			"$options['Vertragslaufzeit']",
+			"$options['Rendite']",
+			"$verrechnung",
+			"$Jahre",
+			"$Monate",
+			"$Perioden",
+			"$Zins",
+			"$Restwert",
+			"$BARwert",
+			",",
+			"",
+			",\\n",
+			"Anlagengroesse",
+			"Verbrauch",
+			"Anlagengroesse",
+			"}\\n else",
+			",\\n",
+			" =>",
+			"",
+			"/",
+			"<runtime><"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "sublime_project.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 232.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -4,6 +4,15 @@ var express = require('express');
 var app = express();
 var http = require('http')
 var server = http.createServer(app);
+var PythonShell = require('python-shell');
+
+//RUN PYTHON scripts:
+console.log('loading python client');
+PythonShell.run('../scripts/python/client.py', function (err) {
+  if (err) throw err;
+  
+});
+
 
 app.use(express.static(__dirname + '/public'));
 server.listen(PORT);

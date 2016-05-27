@@ -1,5 +1,4 @@
 import serial
-import time
 from conf import *
 #Initializing
 ser = serial.Serial(
@@ -13,7 +12,7 @@ ser = serial.Serial(
 
 
 def build_array(channels=512, value=0, kind='serial', single=False):
-    "Produces an array in either Hex or Decimal for each DMX Channel and returns it"
+    "Produces an array for each DMX Channel"
     _array = range(512)
     kette = ""
     if not single:
@@ -43,8 +42,13 @@ def send_serial_data(channels, value):
 def read_serial_data():
     "Reads the incomming Serial DATA"
     values = ser.readline()
-    if values.startswith('['):
+
+    if (values != ""):
         dmx = values.split(',')
         return dmx
     else:
-        return 0
+        emtpy = range(256)
+        for y in emtpy:
+            empty[y] = 0
+
+        return emtpy
