@@ -101,12 +101,14 @@ document.getElementById('slider_3').value =alles.volume.v;
 
 });
 
-socket.on('rgbw_dmx', function(data){
-	color ='rgba('+','+data.r+','+data.g+','+data.b+','+',1)'
+socket.on('rgbw_dmx',function(dmx){
+console.log(dmx);
+color ='rgb('+','+dmx.r+','+dmx.g+','+dmx.b+','+')'
 	console.log(color);
    document.getElementById('divpreview').style.backgroundColor = color;
-   console.log("preview changed");
+
 });
+
 
 
 
