@@ -5,7 +5,7 @@ var app = express();
 var http = require('http')
 var server = http.createServer(app);
 var PythonShell = require('python-shell');
-alle_werte ={};
+alle_werte ={'l':128,'r':255,'g':255,'b':255;'str':0,'v':20};
 
 
 
