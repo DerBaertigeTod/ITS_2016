@@ -1,11 +1,11 @@
 var PORT = 3000;
 var express = require('express');
- 
+
 var app = express();
 var http = require('http')
 var server = http.createServer(app);
 var PythonShell = require('python-shell');
-alle_werte ={'l':128,'r':255,'g':255,'b':255,'str':0,'v':20};
+alle_werte ={ slider_1: { l: '180' },  slider_2: { str: '0' }, volume: { v: '20' },  dmx: { r: 255, g: 51, b: 0, w: 0, l: '180', str: '0' } };
 
 
 
@@ -26,7 +26,7 @@ io.sockets.on("connection",function(socket){
 
 	socket.on('rgbw_send',function(data){
 		alle_werte.dmx = data;
-		console.log('send rgbw_dmx');
+		console.log(alle_werte);
 		socket.broadcast.emit('rgbw_dmx',data);
 		socket.emit('rgbw_dmx',data);
 		});
