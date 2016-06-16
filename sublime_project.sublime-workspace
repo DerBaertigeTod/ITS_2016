@@ -1,0 +1,887 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"hex",
+				"hexToRgb"
+			],
+			[
+				"send_",
+				"send_rgbw"
+			],
+			[
+				"so",
+				"socketIO"
+			],
+			[
+				"chann",
+				"channel_buffer"
+			],
+			[
+				"ca",
+				"channels"
+			],
+			[
+				"channels",
+				"channels"
+			],
+			[
+				"pause",
+				"pause_anything"
+			],
+			[
+				"play",
+				"playing"
+			],
+			[
+				"value",
+				"values"
+			],
+			[
+				"A",
+				"Abschreibung"
+			],
+			[
+				"int",
+				"int"
+			],
+			[
+				"In",
+				"Inflation"
+			],
+			[
+				"Ver",
+				"Vertragslaufzeit"
+			],
+			[
+				"con",
+				"console.Console(stdout, stderr);"
+			],
+			[
+				"pause_",
+				"pause_state"
+			],
+			[
+				"pause_s",
+				"paused_state"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"va",
+				"value2"
+			],
+			[
+				"onc",
+				"onchange	Attr"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"s",
+				"socket"
+			],
+			[
+				"P",
+				"PORT"
+			],
+			[
+				"htt",
+				"httpServer"
+			],
+			[
+				"req",
+				"requestHandler"
+			],
+			[
+				"Zyn",
+				"ZyncColumn"
+			],
+			[
+				"zyn",
+				"zync_user"
+			],
+			[
+				"API",
+				"API_KEY"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Scripts/python/socket_handler.py",
+			"settings":
+			{
+				"buffer_size": 2306,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/public/Mood_is_Music/js/funktioniert.js",
+			"settings":
+			{
+				"buffer_size": 4496,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "function info_values(data){\njQuery(\".popmake-content\").each(function(){\nvar str = jQuery(this).html();\nif(str !== null){\nvar res = str;\n res = str.replace(/AutQoute_SP/gi, Number(data.AutQoute_SP).toFixed(2));\n res = res.replace(/Size_L_explict_SP/gi,Number(data.Power_L_val_SP).toFixed(2));\nres = res.replace(/Size_S_explict_SP/gi, Number(data.Power_S_val_SP).toFixed(2));\nres = res.replace(/Size_L_SP/gi, Number(data.Size_L_val_SP).toFixed(2));\nres = res.replace(/Size_S_SP/gi, Number(data.Size_S_val_SP).toFixed(2));\nres = res.replace(/Pacht_S_SP/gi, Number(data.Montly_S_val_SP).toFixed(2));\nres = res.replace(/Pacht_L_SP/gi, Number(data.Montly_L_val_SP).toFixed(2));\nres = res.replace(/EV_SP/gi, Number(data.EV_SP).toFixed(2));\nres = res.replace(/Savings_no_customer_L_SP/gi, Number(data.Total_Savings_L_no_val_SP).toFixed(2));\nres = res.replace(/Savings_no_customer_S_SP/gi, Number(data.Total_Savings_S_no_val_SP).toFixed(2));\nres = res.replace(/Price/gi, Number(data.Price).toFixed(2));\nres = res.replace(/SP_Inflaion/gi, Number(data.Inf).toFixed(2));\n\nres = res.replace(/AutQoute/gi,data.AutQoute);\nres = res.replace(/Size_L_explict/gi, Number(data.Power_L_val).toFixed(2));\nres = res.replace(/Size_S_explict/gi, Number(data.Power_S_val).toFixed(2));\nres = res.replace(/Size_L/gi, Number(data.Size_L_val).toFixed(2));\nres = res.replace(/Size_S/gi, Number(data.Size_S_val).toFixed(2));\nres = res.replace(/Pacht_S/gi, Number(data.Montly_S_val).toFixed(2));\nres = res.replace(/Pacht_L/gi, Number(data.Montly_L_val).toFixed(2));\nres = res.replace(/EV/gi, Number(data.EV).toFixed(2));\nres = res.replace(/Savings_no_customer_L/gi, Number(data.Total_Savings_L_no_val).toFixed(2));\nres = res.replace(/Savings_no_customer_S/gi, Number(data.Total_Savings_S_no_val).toFixed(2));\nres = res.replace(/\\$/g,'');\njQuery(this).html(res);\n}\n\n});\n}\n\nfunction thousends_seperator(x) {\n    var parts = x.toString().split(\".\");\n    parts[0] = parts[0].replace(/\\B(?=(\\d{3})+(?!\\d))/g, \".\");\n    return parts.join(\",\");\n}\n\nfunction check_for_cases(Results){\n if (Results.Size_S_val == Results.Size_L_val){\n  jQuery('.Size_L').hide();\n }\n if(Results.AllInputdata.Verauch > Results.Power_S_val && Results.Size_S_val > Results.Size_L_val){\n  jQuery('.Size_S').hide();\n  jQuery('.Size_head').each(function(){jQuery(this).html(jQuery(this).html().replace(/Sonnendach\\ L/g,'Sonnendach S'))});\n }\n if(Number(Results.Total_Savings_S_val_SP) <=0){\n  Results.Total_Savings_S_val_SP =0;\n  }\n if(Number(Results.Total_Savings_S_val) <=0){\n  Results.Total_Savings_S_val =0;\n  }\n \n if(Number(Results.Total_Savings_L_val_SP) <=0){\n  Results.Total_Savings_L_val_SP = 0;\n }\n if(Number(Results.Total_Savings_L_val) <=0){\n  Results.Total_Savings_L_val = 0;\n }\n if(Number(Results.AllInputdata.Flaeche) > 100 || Number(Results.AllInputdata.Flaeche_other) > 100){\n setTimeout(function(){document.getElementById('over_100').click()},4000);\n }\n \n newResults = format_Data(Results);\n \n  return newResults;\n}\nfunction format_Data(Input){\n var Results = [];\n jQuery.each(Input,function(key,value){\n Results[key] = thousends_seperator(value);\n });\n return Input;\n}\nfunction GGEW_results(Results) {\n	jQuery('#Power_S_val').html(Number(Results.Size_S_val).toFixed(2));\n jQuery('#Montly_S_val').html(Number(Results.Montly_S_val).toFixed(2));\n jQuery('#Cust_Savings_S_val').html(Number(Results.Cust_Savings_S_val).toFixed(2));\n jQuery('#Total_Savings_S_val').html(Math.floor(Number(Results.Total_Savings_S_val)).toFixed(2));\n jQuery('#Power_L_val').html(Number(Results.Size_L_val).toFixed(2));\n jQuery('#Montly_L_val').html(Number(Results.Montly_L_val).toFixed(2));\n jQuery('#Cust_Savings_L_val').html(Number(Results.Cust_Savings_L_val).toFixed(2));\n jQuery('#Total_Savings_L_val').html(Math.floor(Number(Results.Total_Savings_L_val)).toFixed(2));\n	jQuery('#Power_S_val_SP').html(Number(Results.Size_S_val_SP).toFixed(2));\n jQuery('#Montly_S_val_SP').html(Number(Results.Montly_S_val_SP).toFixed(2));\n jQuery('#Cust_Savings_S_val_SP').html(Number(Results.Cust_Savings_S_val_SP).toFixed(2));\n jQuery('#Total_Savings_S_val_SP').html(Math.floor(Number(Results.Total_Savings_S_val_SP)).toFixed(2));\n jQuery('#Power_L_val_SP').html(Number(Results.Size_L_val_SP).toFixed(2));\n jQuery('#Montly_L_val_SP').html(Number(Results.Montly_L_val_SP).toFixed(2));\n jQuery('#Cust_Savings_L_val_SP').html(Number(Results.Cust_Savings_L_val_SP).toFixed(2));\n jQuery('#Total_Savings_L_val_SP').html(Math.floor(Number(Results.Total_Savings_L_val_SP)).toFixed(2));\n info_values(Results);\n fillhiddenform(Results);\n	jQuery(\"#psc_plugin\").cycle('next');\n}\n\nfunction numberFormat(_number, _sep) {\n    _number = typeof _number != \"undefined\" && _number > 0 ? _number : \"\";\n    _number = _number.replace(new RegExp(\"^(\\\\d{\" + (_number.length%3? _number.length%3:0) + \"})(\\\\d{3})\", \"g\"), \"$1 $2\").replace(/(\\d{3})+?/gi, \"$1 \").trim();\n    if(typeof _sep != \"undefined\" && _sep != \" \") {\n        _number = _number.replace(/\\s/g, _sep);\n    }\n    return _number;\n};\n\nfunction present_results(Results) {\n	\n jQuery('#power').html(thousends_seperator(Number(Results.Leistung).toFixed(2)) + \"kWp\");\n jQuery('#price').html(thousends_seperator(Number(Results.Price).toFixed()) + \"€\");\n jQuery('#ammount').html(thousends_seperator(Number(Results.Erzeugung).toFixed(2)) + \"kWh\");\n jQuery('#Ersparnis').html(thousends_seperator(Math.floor(Number(Results.Spar)).toFixed()) + \"€\");\n jQuery('#Contact-jQueryValues').val(\"<br />Ergebnise: \" + Results);\n\n setTimeout(function(){show_results(Results);},700);\n jQuery(\"#psc_plugin\").cycle(\"next\");\n	if( Number(Results.Leistung) >=10){\n	setTimeout(function(){jQuery('.popmake-solarrechner').click(); console.log(\"leistungover10\")},8000);\n	setTimeout(function(){jQuery('.popmake-solarrechner-3').click(); console.log(\"bitte kontakt\")},28000);\n\n	}\n	else{\n	setTimeout(function(){jQuery('.popmake-solarrechner-3').click(); console.log(\"bitte kontakt\")},12000);\n\n	}\n\n};\n\n\njQuery.fn.serializeObject = function()\n{\n   var o = {};\n   var a = this.serializeArray();\n   jQuery.each(a, function() {\n       if (o[this.name]) {\n           if (!o[this.name].push) {\n               o[this.name] = [o[this.name]];\n           }\n           o[this.name].push(this.value || '');\n       } else {\n           o[this.name] = this.value || '';\n       }\n   });\n   return o;\n};\n\n\nfunction warning(thewarning){\n	switch (thewarning){\n		case 'PLZ':\n			alert('Leider ist DEIN GGEW SONNENDACH in Ihrem Wohnort noch nicht verfügbar. Gerne prüfen wir aber im Einzelfall, welche Möglichkeiten in Ihrer Region bestehen. Bitte nehmen Sie Kontakt zu uns auf. Vielen Dank.');\n			jQuery('.next').hide();\n			jQuery('#Code_enabler').click();\n			setTimeout(function(){\n			 jQuery('.next').show();\n			},1500)\n			break;\n		case 'Dach':\n			alert('Leider unterstützen wir Dachflächen erst ab 16m²');\n			//jQuery('.next').hide();\n			break;\n			\n	}\n	\n}\nfunction validation_plz(checked){\n	checked = JSON.stringify(checked).replace(\"\\\\n\",\"\");\n	if(checked == '\"true\"'){\n		jQuery(\"#psc_plugin\").cycle('next');\n	}\n	else{\n	warning('PLZ');\n	}\n}\nfunction validation_Dach(Values){\n	if (Values['Flaeche'] == 'nil'){\n	Values['Flaeche'] = Values['Flaeche_other'];\n	}\n	Size=Values['Flaeche'];\n	if(Size<16) warning('Dach')\nelse jQuery(\"#psc_plugin\").cycle('next');\n}\n\nfunction show_results(vars) {\n\n function go() {\n  if (runned == 0) {\n   pieChart(vars.Spar, vars.Einspeiseverguetung, vars.Einsparung_Selbstverbrauch, runned);\n   runned = 1;\n  } else {\n   pieChart(vars.Spar, vars.Einspeiseverguetung, vars.Einsparung_Selbstverbrauch, runned);\n  }\n };\n go();\n}\n\nfunction inputs() {\n\n jQuery(\"input.grad_org \").change(function() {\n  jQuery(\"input.grad_dup  \").val(this.value + '°');\n });\n jQuery(\"input.grad_dup \").change(function() {\n  jQuery(\"input.grad_org\").val(this.value.replace(/\\D+$/g, \"\"));\n });\n jQuery(\"input.square_org \").change(function() {\n  jQuery(\"input.square_dup \").val(this.value + 'm²');\n });\n jQuery(\"input.square_dup \").change(function() {\n  jQuery(\"input.square_org\").val(this.value.replace(/\\D+$/g, \"\"));\n });\n jQuery(\"input.kw_org \").change(function() {\n  jQuery(\"input.kw_dup \").val(this.value + ' kWh/Jahr');\n });\n jQuery(\"input.kw_dup \").change(function() {\n  jQuery(\"input.kw_org\").val(this.value.replace(/\\D+$/g, \"\"));\n });\n jQuery(\"input.pro_org \").change(function() {\n  jQuery(\"input.pro_dup \").val(this.value + '%');\n });\n jQuery(\"input.pro_dup \").change(function() {\n  jQuery(\"input.pro_org\").val(this.value.replace(/\\D+$/g, \"\"));\n });\n jQuery(\"input.cent_org \").change(function() {\n  jQuery(\"input.cent_dup \").val(this.value + ' cent/kWh');\n });\n jQuery(\"input.cent_dup \").change(function() {\n  jQuery(\"input.cent_org\").val(this.value.replace(/\\D+$/g, \"\"));\n });\nvar state = true;\njQuery('h3#Akku_L').click(function(){\n jQuery('.SP_L').slideToggle(500);\n jQuery('.no_SP_L').slideToggle(500);\n state = !state;\n if(!state) jQuery(this).html('Ergebnis ohne Speicher anzeigen!').fadeTo(500);\n else jQuery(this).html('Ergebnis mit Speicher anzeigen!').fadeTo(500);\n \n});\njQuery('h3#Akku_S').click(function(){\n jQuery('.SP').slideToggle(500);\n jQuery('.no_SP').slideToggle(500);\n state = !state;\n if(!state) jQuery(this).html('Ergebnis ohne Speicher anzeigen!').fadeTo(500);\n else jQuery(this).html('Ergebnis mit Speicher anzeigen!').fadeTo(500);\n});\n}\n\nfunction toggleContact(VAL){\n jQuery('input.hidden-167').val(VAL);\n jQuery('#psc_plugin').cycle('next');\n}\n\nfunction fillhiddenform(Inputs){\n jQuery('#hiddenPLZ').val(Inputs.AllInputdata.PLZ);\n if (Inputs.AllInputdata.Dachneigung == null || Inputs.AllInputdata.Dachneigung == \"nil\"){\n	var Dachneigung = Inputs.AllInputdata.Dachneigung_other;\n }\n	if (Inputs.AllInputdata.Flaeche == null || Inputs.AllInputdata.Flaeche == 'nil'){\n	var Flaeche = Inputs.AllInputdata.Flaeche_other;\n	}\n jQuery('#hiddenSIZE').val(Inputs.AllInputdata.Flaeche);\njQuery('#hiddenOrientation').val(Inputs.AllInputdata.Dachausrichtung);\njQuery('#hiddenTilt').val(Inputs.AllInputdata.Dachneigung);\njQuery('#hiddenVerbr').val(Inputs.AllInputdata.Verbrauch);\njQuery('#hiddenDay').val(Inputs.AllInputdata.Day);\njQuery('#hiddenPrice').val(Inputs.AllInputdata.Preis);\njQuery('#hiddenCalc_Data').val(Inputs['DATA.SETS']);\n}\nfunction person(Anzahl, click) {\n\n switch (Anzahl) {\n  case '1':\n   if (click) setVal('1500');\n   jQuery('#person_1').removeClass('p1').addClass('p1_h');\n   jQuery('#person_2').removeClass('p2_h').addClass('p2');\n   jQuery('#person_3').removeClass('p3_h').addClass('p3');\n   jQuery('#person_4').removeClass('p3_h').addClass('p3');\n   jQuery('#person_5').removeClass('p3_h').addClass('p3');\n   break;\n  case '2':\n   jQuery('#person_1').removeClass('p1').addClass('p1_h');\n   jQuery('#person_2').removeClass('p2').addClass('p2_h');\n   jQuery('#person_3').removeClass('p3_h').addClass('p3');\n   jQuery('#person_4').removeClass('p3_h').addClass('p3');\n   jQuery('#person_5').removeClass('p3_h').addClass('p3');\n   if (click) setVal('2500');\n   break;\n  case '3':\n   jQuery('#person_1').removeClass('p1').addClass('p1_h');\n   jQuery('#person_2').removeClass('p2').addClass('p2_h');\n   jQuery('#person_3').removeClass('p3').addClass('p3_h');\n   jQuery('#person_4').removeClass('p3_h').addClass('p3');\n   jQuery('#person_5').removeClass('p3_h').addClass('p3');\n   if (click) setVal('3000');\n   break;\n\n  case '4':\n   jQuery('#person_1').removeClass('p1').addClass('p1_h');\n   jQuery('#person_2').removeClass('p2').addClass('p2_h');\n   jQuery('#person_3').removeClass('p3').addClass('p3_h');\n   jQuery('#person_4').removeClass('p3').addClass('p3_h');\n   jQuery('#person_5').removeClass('p3_h').addClass('p3');\n   if (click) setVal('5000');\n   break;\n  case '5':\n   jQuery('#person_1').removeClass('p1').addClass('p1_h');\n   jQuery('#person_2').removeClass('p2').addClass('p2_h');\n   jQuery('#person_3').removeClass('p3').addClass('p3_h');\n   jQuery('#person_4').removeClass('p3').addClass('p3_h');\n   jQuery('#person_5').removeClass('p3').addClass('p3_h');\n   if (click) setVal('8000');\n   break;\n\n }\n\n function setVal(A) {\n  jQuery('.kw_org').val(A);\n  jQuery('.kw_dup').val(A + ' kWh/Jahr');\n\n }\n}\n\nfunction mapdraw() {\n if (jQuery('#map').length > 0) {\n  Bundeslaender = new jvm.Map({\n   container: jQuery('#map'),\n\n   map: 'de_mill',\n   zoomOnScroll: false,\n   backgroundColor: 'none',\n   regionsSelectable: 'true',\n   regionsSelectableOne: 'true',\n   regionStyle: {\n    initial: {\n     fill: 'white',\n     \"fill-opacity\": 1,\n     stroke: 'none',\n     \"stroke-width\": 2,\n     \"stroke-opacity\": 0\n    },\n\n\n    selected: {\n     fill: 'orange'\n    },\n    selectedHover: {\n     fill: 'orange',\n     \"fill-opacity\": 0.75,\n\n    },\n\n   },\n   onRegionOut: function() {\n    jQuery('.tip-selected').show();\n\n   },\n   onRegionTipShow: function() {\n    jQuery('.tip-selected').hide();\n\n   },\n   onRegionSelected: function() {\n    if (Bundeslaender.getSelectedRegions() != '') {\n     selected = Bundeslaender.getRegionName(Bundeslaender.getSelectedRegions())\n     text = selected;\n     selected_2 = text.replace(/ä/g,\"ae\").replace(/ö/g,\"oe\").replace(/ü/g,\"ue\").replace(/Ä/g,\"Ae\").replace(/Ö/g,\"Oe\").replace(/Ü/g,\"Ue\").replace(/ß/g,\"ss\");\n     jQuery('.jvectormap-tip').hide();\n     jQuery('input#BL').val(selected_2)\n     jQuery('.tip-selected').html(selected);\n     jQuery('.tip-selected').show();\n\n    };\n   },\n\n\n  });\n }\n\n};\n",
+			"settings":
+			{
+				"buffer_size": 13272,
+				"line_ending": "Windows",
+				"name": "function info_values(data){"
+			}
+		},
+		{
+			"file": "/C/Users/axell/Downloads/PSC_options.php",
+			"settings":
+			{
+				"buffer_size": 8399,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/axell/Downloads/wordpress_ps_1.sql",
+			"settings":
+			{
+				"buffer_size": 5851341,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Windows/System32/drivers/etc/hosts",
+			"settings":
+			{
+				"buffer_size": 830,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/axell/Jottacloud/wordpress_ps_1.sql",
+			"settings":
+			{
+				"buffer_size": 5800861,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/public/Mood_is_Music/index.html",
+			"settings":
+			{
+				"buffer_size": 21129,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/app.js",
+			"settings":
+			{
+				"buffer_size": 1577,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Scripts/python/DMX_data_handler.py",
+			"settings":
+			{
+				"buffer_size": 2232,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "Package Control: inst",
+		"selected_items":
+		[
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"css",
+				"CleanCSS: Clean current file"
+			],
+			[
+				"clean",
+				"CleanCSS: Clean current file"
+			],
+			[
+				"clea",
+				"CleanCSS: Clean current file"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"run",
+			"ls",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/axell/Documents/GitHub/ITS_2016",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/node_modules",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public/Mood_is_Music",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public/Mood_is_Music/css",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public/Mood_is_Music/js",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public/test_app",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public/test_app/assets",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public/test_app/assets/js",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/Scripts",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/Scripts/python"
+	],
+	"file_history":
+	[
+		"/C/Users/axell/AppData/Local/Temp/Temp1_wordpress_ps_1.sql.zip/wordpress_ps_1.sql",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public/Mood_is_Music/js/funktioniert.js",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/Scripts/python/client.py",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/app.js",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public/Mood_is_Music/css/stylesheet.css",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public/assets/js/core.js",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/app/public/index.html",
+		"/C/Users/axell/Documents/GitHub/iot/raspi/Labor2_MT/python/client.py",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/Arduino Sketcheseses/dimmer_dmx_test/dimmer_dmx_test.ino",
+		"/C/Users/axell/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/axell/AppData/Roaming/Sublime Text 3/Packages/User/C++.sublime-settings",
+		"/C/Users/axell/Documents/Arduino/libraries/DmxSimple/DmxSimple.cpp",
+		"/C/Users/axell/Documents/GitHub/ITS_2016/Scripts/python/DMX_data_handler.py",
+		"/C/Users/axell/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/axell/Documents/RasViMap/ola-0.10.1_2/plugins/uartdmx/.libs/UartWidget.gcda",
+		"/C/Users/axell/Documents/RasViMap/ola-0.10.1/plugins/uartdmx/UartDmxDevice.cpp",
+		"/C/Users/axell/Downloads/TOWN_www_town_ag_0DAY_APPS_CadSoft_Computer_EAGLE_Professional_v7_2_0_AMPED/amped.nfo",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/index.html",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/html_02(1)/css/index.css",
+		"/C/Users/axell/Documents/GitHub/RasViMap/Scripts/install.sh",
+		"/C/Users/axell/Documents/GitHub/RasViMap/Scripts/python/write_serial.py",
+		"/C/Users/axell/Documents/RasViMap/RasViMap.js",
+		"/C/Users/axell/Documents/GitHub/RasViMap/APP/web_server/index.html",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/html_02(1)/index.html",
+		"/C/Users/axell/Documents/GitHub/RasViMap/Scripts/python/read_serial.py",
+		"/C/Users/axell/Documents/GitHub/RasViMap/APP/package.json",
+		"/C/Users/axell/Desktop/Unbenannt.htm",
+		"/F/config.txt",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/html_02/css/site_global.css",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/html_02/index.html",
+		"/C/Users/axell/AppData/Roaming/Skype/My Skype Received Files/html_02/css/index.css",
+		"/C/Users/axell/Documents/RasViMap/V2/index.html",
+		"/C/xampp/htdocs/08-flat-shading.html",
+		"/C/xampp/htdocs/04-fragmentshader.html",
+		"/C/Users/axell/Documents/GitHub/RasViMap/README.md",
+		"/C/Users/axell/Desktop/ping",
+		"/F/.config",
+		"/F/boot.scr",
+		"/C/Users/axell/Documents/MOSI/node_projects/websockets/app.js",
+		"/C/Users/axell/Documents/MOSI/node_projects/test1.js",
+		"/F/cmdline.txt",
+		"/Z/websockets/app.js",
+		"/Z/websockets/public/index.html",
+		"/Z/websockets/public/graystone/buchhaendler.html",
+		"/C/Users/axell/AppData/Roaming/Kodi/userdata/advancedsettings.xml",
+		"/Z/websockets/public/code.js",
+		"/C/Users/axell/AppData/Roaming/Kodi/kodi.log",
+		"/E/config.txt",
+		"/C/Users/axell/Documents/MOSI/node_projects/websockets/public/code.js",
+		"/C/Users/axell/Documents/MOSI/node_projects/websockets/public/index.html",
+		"/C/Users/axell/Documents/MOSI/node_projects/statichtml.js",
+		"/C/Users/axell/Documents/MOSI/node_projects/express.js",
+		"/C/Users/axell/Documents/MOSI/node_projects/test2.js",
+		"/C/Users/axell/Documents/MOSI/node_projects/packadge.json",
+		"/C/Users/axell/Documents/MOSI/node_projects/websockets/package.json",
+		"/C/msys/1.0/etc/fstab",
+		"/C/adbFire/adbfire.log",
+		"/C/Users/axell/OneDrive/ARBEIT/Werkvoll/MAYASCRIPT/MayaMultiRenderer.py",
+		"/C/Users/axell/Downloads/bjornd-jvectormap-2.0.4-0-ga0e5497/bjornd-jvectormap-a0e5497/LICENSE-AGPL",
+		"/C/Users/axell/Downloads/bjornd-jvectormap-2.0.4-0-ga0e5497/bjornd-jvectormap-a0e5497/jquery-jvectormap.js",
+		"/C/Users/axell/Downloads/jquery-jvectormap-2.0.3.min.js",
+		"/C/Users/axell/OneDrive/ARBEIT/Werkvoll/MAYASCRIPT/Utility.py",
+		"/C/Users/axell/OneDrive/ARBEIT/Werkvoll/MAYASCRIPT/FileNameGenerator.py",
+		"/C/Users/axell/OneDrive/ARBEIT/Werkvoll/MAYASCRIPT/BaseWindow.py",
+		"/C/Users/axell/Downloads/xbmc_videodb_2016-03-22/videodb.xml",
+		"/C/msys/1.0/etc/fstab.sample",
+		"/C/Users/axell/Downloads/style.css",
+		"/C/Users/axell/AppData/Local/Temp/fz3temp-1/style.css"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"newhp.",
+			"pfalzsolar.de/workspace/PfalzSolar",
+			"http://newhp.pfalzsolar.de",
+			"https://psolar-exellent1988.c9.io",
+			"https://newhp",
+			"https://",
+			"dev.dawolke.de",
+			"dev.pfalzsolar.de",
+			"pfalzsolar-exellent1988-1.c9users.io",
+			"utf8",
+			"views",
+			"http://pfalzsolar.de",
+			"http://pfazsolar.de",
+			"dev.pfal",
+			"dev.dawolke.de",
+			"https://pfalzsolar-exellent1988.c9users.io",
+			"http://pfalzsolar-exellent1988-1.c9users.io",
+			"dev.pfalzsolar.de",
+			"https://pfalzsolar-exellent1988.c9users.io",
+			"channels",
+			"80",
+			"line",
+			"LEDOUT0",
+			"'http://",
+			"http://dev.dawolke.de/workspace/GGEW/wp-content/plugins/PS-Solar-Calc/assets/css/fonts/",
+			"url('dev",
+			"src: local('☺'), ",
+			"http://dev",
+			"url('../fonts/",
+			"content",
+			"src: url('../fonts/",
+			"           ",
+			"[]",
+			">",
+			"-",
+			"file",
+			"IL",
+			"!important",
+			"\\n",
+			"else\n    if",
+			"\\(int\\)\\$options\\['[a-z,A-Z]*'\\]",
+			"$options",
+			"C6",
+			"C41",
+			"A6",
+			"A5",
+			"$Perioden",
+			"A4",
+			"A3",
+			"A2",
+			"A1",
+			"\\n",
+			"max",
+			"Flaeche",
+			"else",
+			"\\n",
+			"   ",
+			"    ",
+			"   ",
+			"    ",
+			"%",
+			"\\",
+			"<runtime>0<"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"pfalzsolar.de",
+			"http://newhp.pfalzsolar.de",
+			"http://newhp",
+			"newhp.pfalzsolar.de",
+			"http://newhp.pfalzsolar.de",
+			"newhp.pfalzsolar.de",
+			"http://newhp.pfalzsolar.de",
+			"newhp.pfalzsolar.de",
+			"http://newhp.pfalzsolar.de",
+			"channel_buffer",
+			"DMX0",
+			"'",
+			"http://https://ggew-exellent1988.c9users.io/wp-content/plugins/PS-Solar-Calc/assets/fonts/",
+			"url('http://dev",
+			"src: ",
+			"dev",
+			"url('http://dev.dawolke.de/workspace/GGEW/wp-content/plugins/PS-Solar-Calc/assets/css/fonts/",
+			"src: url('http://dev.dawolke.de/workspace/GGEW/wp-content/plugins/PS-Solar-Calc/assets/css/fonts/",
+			"",
+			"[ ]",
+			"-[] ",
+			">",
+			",",
+			"elseif",
+			"($0)",
+			"($1)",
+			"(/1)",
+			"($1)",
+			"({})",
+			"(\\(int\\)\\$options\\['[a-z,A-Z]*'\\])",
+			"(int)$options",
+			"$options['Vertragslaufzeit']",
+			"$options['Rendite']",
+			"$verrechnung",
+			"$Jahre",
+			"$Monate",
+			"$Perioden",
+			"$Zins",
+			"$Restwert",
+			"$BARwert",
+			",",
+			"",
+			",\\n",
+			"Anlagengroesse",
+			"Verbrauch",
+			"Anlagengroesse",
+			"}\\n else",
+			",\\n",
+			" =>",
+			"",
+			"/",
+			"<runtime><"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Scripts/python/socket_handler.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								984,
+								984
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 401.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/public/Mood_is_Music/js/funktioniert.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4496,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4309,
+								4309
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1530.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5381,
+								5381
+							]
+						],
+						"settings":
+						{
+							"auto_name": "function info_values(data){",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1759.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/axell/Downloads/PSC_options.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8399,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8396,
+								8396
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7560.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/axell/Downloads/wordpress_ps_1.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5851341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2597975,
+								2597975
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 2871.0,
+						"translation.y": 212905.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Windows/System32/drivers/etc/hosts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 830,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								829,
+								829
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/axell/Jottacloud/wordpress_ps_1.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5800861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/public/Mood_is_Music/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19585,
+								19585
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2655.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1577,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1572,
+								1572
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 905.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Scripts/python/DMX_data_handler.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2232,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1537,
+								1516
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 579.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "sublime_project.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 232.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
