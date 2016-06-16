@@ -102,7 +102,7 @@ document.getElementById('slider_3').value =alles.volume.v;
 });
 
 socket.on('rgbw_dmx',function(dmx){
-console.log(dmx);
+console.log("getting dmx " +dmx);
 color ='rgb('+','+dmx.r+','+dmx.g+','+dmx.b+','+')'
 	console.log(color);
    document.getElementById('divpreview').style.backgroundColor = color;
