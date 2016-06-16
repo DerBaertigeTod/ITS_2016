@@ -102,8 +102,10 @@ document.getElementById('slider_3').value =alles.volume.v;
 });
 
 socket.on('rgbw_dmx', function(data){
-   document.getElementById('divpreview').style.backgroundColor = 'rgba('+','+data.r+','+data.g+','+data.b+','+',1)'
-   console.log("preview changed")
+	color ='rgba('+','+data.r+','+data.g+','+data.b+','+',1)'
+	console.log(color);
+   document.getElementById('divpreview').style.backgroundColor = color;
+   console.log("preview changed");
 });
 
 
