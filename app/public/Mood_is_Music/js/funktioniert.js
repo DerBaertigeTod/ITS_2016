@@ -105,12 +105,11 @@ socket.on('rgbw_dmx',function(dmx){
 console.log("getting dmx " +dmx);
 color ='rgb('+dmx.r+','+dmx.g+','+dmx.b+')'
 	console.log(color);
-   document.getElementById('divpreview').style.backgroundColor = color;
+   document.body.style.backgroundColor = color;
 
 });
 
-
-
+$('.marquee').marquee();
 
 }
 
@@ -153,4 +152,3 @@ function hexToRgb(hex) {
         b: parseInt(result[3], 16)
     } : null;
 }
-
