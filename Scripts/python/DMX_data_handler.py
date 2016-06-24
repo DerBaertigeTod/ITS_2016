@@ -3,6 +3,7 @@ import time
 from conf import *
 from threading import Thread
 #Initializing
+last_received = ''
 channel_buffer = range(0, 128)
 for x in xrange(0, 128):
             channel_buffer[x] = 0
