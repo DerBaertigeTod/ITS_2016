@@ -1,6 +1,7 @@
 import serial
 import time
 from conf import *
+from threading import Thread
 #Initializing
 channel_buffer = range(0, 128)
 for x in xrange(0, 128):
