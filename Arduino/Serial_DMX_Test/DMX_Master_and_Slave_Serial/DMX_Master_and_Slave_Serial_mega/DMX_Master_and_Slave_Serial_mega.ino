@@ -5,7 +5,7 @@
 
 int channels_with_vals[128] = {0};
 
-int number_of_channels = 128;
+int number_of_channels = 10;
 
 #define DMX_SLAVE_CHANNELS   number_of_channels
 

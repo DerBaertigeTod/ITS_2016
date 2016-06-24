@@ -1,15 +1,19 @@
+#define F_CPU 16000000UL
+unsigned char X ='U';
 void setup() {
-  Serial1.begin(115200);
-  Serial1.setTimeout(250);
-  Serial1.println("HY PI I'm the DMX_Serial Handler Version 3.1 SERIAL 1");
-Serial.begin(115200);
-  Serial.setTimeout(250);
-  Serial.println("HY PI I'm the DMX_Serial Handler Version 3.1 SERIAL 0");
+
+Serial1.begin(115200);
+ 
+  Serial1.println("HY PI I'm the AATmega162");
+   pinMode(20, OUTPUT);
+
 }
 
 void loop() {
- Serial1.println("TEST on SERIAL 1");
- delay(2000);
- Serial.println("TEST on SERIAL 0");
- delay(2000);
+  delay(500);
+  digitalWrite(20, LOW);
+ Serial1.println("I'm a Test Message");
+ delay(500);
+  digitalWrite(20, HIGH);
+ 
 }
