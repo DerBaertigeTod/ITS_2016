@@ -70,7 +70,25 @@ def send_rgbw():
 
 def read_serial_data():
     "Reads the incomming Serial DATA"
-    ser.flushInput()
-    values = ser.readline()
+    values = last_received
     dmx = values.split(',')
+    print(dmx)
     return dmx
+
+
+def receiving(seri):
+    global last_received
+
+    buffer_string = ''
+    while True:
+        buffer_string = buffer_string + seri.read(seri.inWaiting())
+        if '\n' in buffer_string:
+            lines = buffer_string.split('\n') # Guaranteed to have at least 2 entries
+            last_received = lines[-2]
+            #If the Arduino sends lots of empty lines, you'll lose the
+            #last filled line, so you could make the above statement conditional
+            #like so: if lines[-2]: last_received = lines[-2]
+            buffer_string = lines[-1]
+
+
+Thread(target=receiving, args=(ser,)).start()

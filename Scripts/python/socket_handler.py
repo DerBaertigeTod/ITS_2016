@@ -41,6 +41,7 @@ def get_channel_values():
 
 
 def play_anything(file="/home/pi/ITS_2016/music/test/test.mp3"):
+    print("Playing Music")
     global paused
     if not paused:
         pygame.mixer.init()

@@ -26,7 +26,7 @@ io.sockets.on("connection",function(socket){
 
 	socket.on('rgbw_send',function(data){
 		alle_werte.dmx = data;
-		console.log(alle_werte);
+		console.log("sollte rgbw senden : "+alle_werte);
 		socket.broadcast.emit('rgbw_dmx',data);
 		socket.emit('rgbw_dmx',data);
 		});
