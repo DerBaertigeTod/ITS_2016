@@ -1,15 +1,12 @@
 
-
 #include <Conceptinetics.h>
 #include <DmxSimple.h>
 
 int channels_with_vals[128] = {0};
 
-int number_of_channels = 10;
+int number_of_channels = 128;
 
 #define DMX_SLAVE_CHANNELS   number_of_channels
-
-
 #define INPUT_SIZE ((number_of_channels*3)+number_of_channels)
 DMX_Slave dmx_slave ( DMX_SLAVE_CHANNELS );
 
@@ -19,11 +16,11 @@ void receiving() {
   digitalWrite(2, LOW);
 
     for (int i = 1; i <= number_of_channels; i++) {
-          Serial1.print(dmx_slave.getChannelValue(i));
+          Serial.print(dmx_slave.getChannelValue(i));
           
-          Serial1.print(",");
+          Serial.print(",");
     }
-    Serial1.println(" ");
+    Serial.println(" ");
   }
 
 void sending() {
@@ -37,15 +34,15 @@ void sending() {
 
 void read_values() {
   char input[INPUT_SIZE + 1];
-  byte size = Serial1.readBytes(input, INPUT_SIZE);
+  byte size = Serial.readBytes(input, INPUT_SIZE);
   // Add the final 0 to end the C string
   input[size] = 0;
   int channelid = 0;
   char* command = strtok(input, "&");
   while (command != 0)
   {
-    int value = atoi(command);
-    channels_with_vals[channelid] = value;
+    byte value = atoi(command);
+    channels_with_vals[channelid] = (int) value;
     // Find the next command in input string
     command = strtok(0, "&");
     channelid++;
@@ -56,20 +53,21 @@ void read_values() {
 
 void setup() {
   pinMode(2, OUTPUT);
-  DmxSimple.usePin(3);
+  DmxSimple.usePin(2);
 
   //set SoftwareSerial
-  Serial1.begin(115200);
-  Serial1.setTimeout(250);
+  
   DmxSimple.maxChannel(number_of_channels);
   dmx_slave.enable();
   dmx_slave.setStartAddress (1);
-  Serial1.println("HY PI I'm Version 3");
+  Serial.begin(115200);
+  Serial.setTimeout(250);
+  Serial.println("HY PI I'm Version 3");
 
 }
 void loop() {
 
-  if (Serial1.available() > 0) {
+  if (Serial.available() > 0) {
     read_values();
   }
   else {
