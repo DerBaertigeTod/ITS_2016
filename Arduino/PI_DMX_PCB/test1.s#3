@@ -5216,6 +5216,12 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <wire x1="-55.88" y1="78.74" x2="-55.88" y2="20.32" width="0.1524" layer="91"/>
 <junction x="-55.88" y="78.74"/>
 <junction x="-55.88" y="20.32"/>
+<pinref part="X2" gate="G$1" pin="2"/>
+<wire x1="124.46" y1="76.2" x2="124.46" y2="73.66" width="0.1524" layer="91"/>
+<junction x="124.46" y="73.66"/>
+<pinref part="X1" gate="G$1" pin="2"/>
+<wire x1="127" y1="22.86" x2="127" y2="20.32" width="0.1524" layer="91"/>
+<junction x="127" y="20.32"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -5237,9 +5243,6 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <approved hash="104,1,35.56,38.1,IC2,VCC,N$11,,,"/>
 <approved hash="206,1,2.54,78.74,N$4,,,,,"/>
 <approved hash="206,1,2.54,35.56,N$4,,,,,"/>
-<approved hash="106,1,35.56,68.58,N$6,,,,,"/>
-<approved hash="113,1,-41.3173,87.3548,R1,,,,,"/>
-<approved hash="113,1,-22.86,87.3548,R2,,,,,"/>
 </errors>
 </schematic>
 </drawing>

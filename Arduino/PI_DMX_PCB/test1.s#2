@@ -5148,9 +5148,13 @@ Source: http://download.siliconexpert.com/pdfs/2005/02/24/Semi_Ap/2/VSH/Resistor
 <pinref part="X1" gate="G$1" pin="1"/>
 <wire x1="127" y1="27.94" x2="121.92" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="G$1" pin="B"/>
-<wire x1="121.92" y1="27.94" x2="35.56" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="27.94" x2="66.04" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="27.94" x2="35.56" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="27.94" x2="35.56" y2="30.48" width="0.1524" layer="91"/>
 <junction x="121.92" y="27.94"/>
+<wire x1="33.02" y1="73.66" x2="66.04" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="73.66" x2="66.04" y2="27.94" width="0.1524" layer="91"/>
+<junction x="66.04" y="27.94"/>
 </segment>
 </net>
 <net name="N$3" class="0">
