@@ -40,8 +40,6 @@ def get_color_name(r,g,b):
 
     
     return smallest_name
-    
-color= get_color_name(red,green,blue)
 
 "liest die alten Werte aus"
 def del_and_update():
@@ -80,6 +78,7 @@ def get_data_by_color(color):
 #    print ' '
     return data 
 
+
 "updatet die Werte"
 def set_data_by_color(color,data):
     c.execute("UPDATE color \
@@ -87,8 +86,10 @@ def set_data_by_color(color,data):
                where id = "+str(color)+"")
     conn.commit()
 
+
+def update_db (color,target,up):
 "legt die Updatewerte fest"
-def update(color,target,up):
+
     datas = get_data_by_color(color)
     val2 = 0
     
@@ -157,8 +158,8 @@ def random_genre(color):
     return genre
 
 
-"wählt einen zufälligen Track aus Genre"
 def random_track(color): 
+"wählt einen zufälligen Track aus Genre"
     genre = random_genre(color)
     c.execute('SELECT MAX(id) FROM '+genre)
     maxid = c.fetchone()[0]

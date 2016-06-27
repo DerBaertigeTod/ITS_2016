@@ -29,6 +29,7 @@ io.sockets.on("connection",function(socket){
 		console.log("sollte rgbw senden : "+alle_werte);
 		socket.broadcast.emit('rgbw_dmx',data);
 		socket.emit('rgbw_dmx',data);
+		socket.broadcast.emit('play_anything');
 		});
 
 	socket.on('slider_1',function(data){

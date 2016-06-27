@@ -5,6 +5,8 @@ import pygame
 from DB_handler import *
 socketIO = SocketIO(SERVER, PORT)
 global paused
+global genre
+genre = 'rock'
 paused = False;
 
 
@@ -45,6 +47,8 @@ def play_anything(file="/home/pi/ITS_2016/music/test/test.mp3"):
     global channel_buffer
     infos = random_track(get_color_name(channel_buffer[2],get_color_name[3],get_color_name[4]))
     file = infos[1]
+    global genre
+    genre = infos[3]
     global paused
     if not paused:
         pygame.mixer.init()
@@ -56,8 +60,8 @@ def play_anything(file="/home/pi/ITS_2016/music/test/test.mp3"):
     else:
         pygame.mixer.music.unpause()
         paused = False
-    socket.emit('Interpret', {'Interpret':infos[2]})
-    socket.emit('Song',{'Song':infos[0]})
+    socketIO.emit('Interpret', {'Interpret':infos[2],'Song':infos[0]})
+    
     
 
 def pause_anything():
@@ -84,6 +88,17 @@ def set_strobe(data):
     send_rgbw()
 
 
+def like():
+    global channel_buffer
+    global genre
+    update_db(get_color_name(channel_buffer[2],get_color_name[3],get_color_name[4]),genre,True)
+
+
+def like():
+    global channel_buffer
+    global genre
+    update_db(get_color_name(channel_buffer[2],get_color_name[3],get_color_name[4]),genre,False)
+
 def receive_websockets():
     "Collects Websocket data and calls the right function"
 #    socketIO.on('slider1', slider1_call)
@@ -91,6 +106,8 @@ def receive_websockets():
     socketIO.on('lampe', send_dmx_channels_with_values)
     socketIO.on('get_channel_values', get_channel_values)
     socketIO.on('rgbw_dmx',send_dmx_rgbw)
+    socketIO.on('like',like)
+    socketIO.on('dislike',dislike)
     socketIO.on('play_anything',play_anything)
     socketIO.on('pause_anything',pause_anything)
     socketIO.on('volume',music_volume)
