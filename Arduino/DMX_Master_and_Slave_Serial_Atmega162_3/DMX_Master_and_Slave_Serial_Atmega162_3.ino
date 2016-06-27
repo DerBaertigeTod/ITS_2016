@@ -54,12 +54,12 @@ void read_values() {
   while (command != 0)
   {
     int value = atoi(command);
-    channels_with_vals[channelid] =  value;
-    // Find the next command in input string
+    //channels_with_vals[channelid] =  value;
+    dmx_master.setChannelValue(channelid, value);
     command = strtok(0,"&");
     channelid++;
   }
-    sending();
+    //sending();
 }
 
 void loop() {

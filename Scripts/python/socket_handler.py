@@ -2,7 +2,7 @@ from conf import *
 from DMX_data_handler import *
 from socketIO_client import SocketIO
 import pygame
-
+from DB_handler import *
 socketIO = SocketIO(SERVER, PORT)
 global paused
 paused = False;
@@ -27,7 +27,7 @@ def send_dmx_rgbw(*data):
 def send_dmx_channels_with_values(*data):
     "Sends DMX Channel range"
     send_serial_data(10, data[0]["value"])
-    print "something should happen"
+    #print "something should happen"
 
 
 def send_websocket(which, *data):
@@ -41,7 +41,10 @@ def get_channel_values():
 
 
 def play_anything(file="/home/pi/ITS_2016/music/test/test.mp3"):
-    print("Playing Music")
+    #print("Playing Music")
+    global channel_buffer
+    infos = random_track(get_color_name(channel_buffer[2],get_color_name[3],get_color_name[4]))
+    file = infos[1]
     global paused
     if not paused:
         pygame.mixer.init()
@@ -53,8 +56,9 @@ def play_anything(file="/home/pi/ITS_2016/music/test/test.mp3"):
     else:
         pygame.mixer.music.unpause()
         paused = False
+    socket.emit('Interpret', {'Interpret':infos[2]})
+    socket.emit('Song',{'Song':infos[0]})
     
-
 
 def pause_anything():
     "Pausiert die Music"
