@@ -50,14 +50,12 @@ document.getElementById('slider_3').addEventListener("input", function($){
 
 //Bei jedem Klicken auf den Like-Button wird +1 gezählt und Wert neben dem Button angezeigt 
 document.getElementById('like').addEventListener("click", function($){
-	counter++;
-	document.getElementById('like_count').innerHTML= counter;
+	socket.emit('like');
 });
 
 //Bei jedem Klicken auf den Dislike-Button wird +1 gezählt und Wert neben dem Button angezeigt
 document.getElementById('dislike').addEventListener("click", function($){
-	counter_d++;
-	document.getElementById('dislike_count').innerHTML= counter_d;
+	socket.emit('dislike');
 });
 
 //Musik wird beim Betätigen des Play-Buttons von Vorne abgespielt
@@ -72,33 +70,30 @@ document.getElementById('pause').addEventListener("click", function($){
 	console.log("pause music");
 });
 
-socket.on('lumi',function(data){
+socket.on('lumi', function(data){
 document.getElementById('slider_1').value =data.l;
 document.getElementById('slider_1_value').innerHTML =data.l;
-
 });
 
-socket.on('strobe',function(data){
+socket.on('strobe', function(data){
 document.getElementById('slider_2').value =data.str;
 document.getElementById('slider_2_value').innerHTML =data.str;
-
-
 });
 
-socket.on('volume',function(data){
+socket.on('volume', function(data){
 document.getElementById('slider_3').value =data.v;
 document.getElementById('slider_3_value').innerHTML =data.v;
-
-
 });
 
+socket.on('Interpret', function(data){
+	document.getElementById('nowplay').innerHTML =data.Interpret + ' - ' + data.Song;
+})
 
 socket.on('alle_werte',function(alles){
 console.log(alles);
 document.getElementById('slider_1').value =alles.slider_1.l;
 document.getElementById('slider_2').value =alles.slider_2.str;
 document.getElementById('slider_3').value =alles.volume.v;
-
 });
 
 socket.on('rgbw_dmx',function(dmx){

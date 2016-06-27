@@ -68,7 +68,20 @@ io.sockets.on("connection",function(socket){
  	socket.on('channels',function(channels){
  		socket.broadcast.emit('channels', channels);
  	})
+
+ 	socket.on('Interpret',function(data){
+ 		alle_werte.Interpret = data.Interpret;
+ 		alle_werte.Song = data.Song;
+ 		socket.broadcast.emit('Interpret', data);
+ 	})
+
+ 	socket.on('like', function(){
+ 		socket.broadcast.emit('like');
+ 	}
  
+ 	socket.on('dislike', function(){
+ 		socket.broadcast.emit('dislike');
+ 	}
 
 setInterval( function(){
 		socket.emit('get_channel_values');
