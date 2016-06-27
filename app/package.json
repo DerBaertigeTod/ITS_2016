@@ -8,6 +8,6 @@
   "dependencies": {
    "express": "",
    "socket.io": "",
-   "python-shell":""
+   /*"python-shell":""*/
   }
 }
