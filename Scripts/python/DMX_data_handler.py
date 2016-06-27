@@ -66,7 +66,7 @@ def send_rgbw():
     rgbw_channel_buffer = rgbw_channel_buffer+'&'+str(channel_buffer[5])
     rgbw_channel_buffer = rgbw_channel_buffer+'&'+str(channel_buffer[6])
     ser.write(chr(13).encode('ascii'))
-    ser.write(rgbw_channel_buffer.encode('ascii'))
+    ser.write(rgbw_channel_buffer+'\n')
     print(rgbw_channel_buffer) 
     print("Send RGBW DATA")     
 
