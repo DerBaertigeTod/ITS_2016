@@ -87,6 +87,7 @@ document.getElementById('slider_3_value').innerHTML =data.v;
 
 socket.on('Interpret', function(data){
 	document.getElementById('nowplay').innerHTML =data.Interpret + ' - ' + data.Song;
+	$('.marquee').marquee();
 })
 
 socket.on('alle_werte',function(alles){
@@ -103,8 +104,8 @@ color ='rgb('+dmx.r+','+dmx.g+','+dmx.b+')'
    document.body.style.backgroundColor = color;
 
 });
-
 $('.marquee').marquee();
+
 
 }
 
@@ -125,7 +126,7 @@ function clickColor(hex, seltop, selleft, html5) {
 
 	console.log('B: ' +farben.b);
 
-	socket.emit('rgbw_send', {'r': farben.r, 'g': farben.g, 'b': farben.b, 'w': 0, 'l':document.getElementById('slider_1').value, 'str':document.getElementById('slider_2').value});
+	socket.emit('rgbw_send', {'r': farben.r, 'g': farben.g, 'b': farben.b, 'w': 0, 'l': Number(document.getElementById('slider_1').value), 'str': Number(document.getElementById('slider_2').value)});
     
 	
     if ((seltop+200)>-1 && selleft>-1) {

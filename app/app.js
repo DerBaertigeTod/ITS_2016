@@ -5,7 +5,7 @@ var app = express();
 var http = require('http')
 var server = http.createServer(app);
 var PythonShell = require('python-shell');
-alle_werte ={ slider_1: { l: '180' },  slider_2: { str: '0' }, volume: { v: '20' },  dmx: { r: 255, g: 51, b: 0, w: 0, l: '180', str: '0' } };
+alle_werte ={ slider_1: { l: '0' },  slider_2: { str: '0' }, volume: { v: '20' },  dmx: { r: 255, g: 51, b: 0, w: 0, l: 0, str: 0 } };
 
 
 
@@ -82,19 +82,5 @@ io.sockets.on("connection",function(socket){
  		socket.broadcast.emit('dislike');
  	});
 
-setInterval( function(){
-		socket.emit('get_channel_values');
-	},250);
-
-})
-
-
-
-	
-
-//RUN PYTHON scripts:
-//	console.log('loading python client');
-//	PythonShell.run('../Scripts/python/client.py', function (err) {
- // if (err) throw err;
-  
- //}); 
+ 
+});

@@ -1,4 +1,4 @@
-from conf import *
+from conf   import *
 from DMX_data_handler import *
 from socketIO_client import SocketIO
 import pygame
@@ -7,7 +7,7 @@ socketIO = SocketIO(SERVER, PORT)
 global paused
 global genre
 genre = 'rock'
-paused = False;
+paused = False
 
 
 def on_checkbox_response(*args):
@@ -41,21 +41,31 @@ def get_channel_values():
     "Sends receiving_channel values via broadcast"
     socketIO.emit('channels', {'all': read_serial_data()})
 
+def print_end():
+	print 'ENDED MUSIC'
 
-def play_anything(file="/home/pi/ITS_2016/music/test/test.mp3"):
-    #print("Playing Music")
-    global channel_buffer
-    infos = random_track(get_color_name(channel_buffer[2],get_color_name[3],get_color_name[4]))
-    file = infos[1]
+
+
+def play_anything(file="/home/pi/ITS_2016/music/rock/Low.mp3"):
+    print("Playing Music")
     global genre
+    global channel_buffer
+    print "In Python :"
+    color_name = get_color_name(channel_buffer[2],channel_buffer[3],channel_buffer[4])
+    print color_name
+    infos = random_track(color_name)
     genre = infos[3]
+    file = MUSIC_PATH +'/'+str(genre)+'/' +str(infos[0][0]) +'.mp3'
+    print 'file: '
+    print file
     global paused
     if not paused:
-        pygame.mixer.init()
+    	pygame.mixer.init()
         pygame.mixer.music.load(file)
         pygame.mixer.music.play()
+        pygame.mixer.music.set_endevent()
         paused = False
-       # while pygame.mixer.music.get_busy() == True:
+       	#while pygame.mixer.music.get_busy() == True:
         #continue
     else:
         pygame.mixer.music.unpause()
@@ -68,7 +78,8 @@ def pause_anything():
     "Pausiert die Music"
     global paused
     pygame.mixer.music.pause()
-    paused = True
+    paused = True	
+
 
 
 def music_volume(data):
@@ -88,16 +99,17 @@ def set_strobe(data):
     send_rgbw()
 
 
-def like():
+def like_func():
     global channel_buffer
     global genre
-    update_db(get_color_name(channel_buffer[2],get_color_name[3],get_color_name[4]),genre,True)
+    update_db(get_color_name(channel_buffer[2],channel_buffer[3],channel_buffer[4]),genre,True)
 
 
-def like():
+def dislike_func():
     global channel_buffer
     global genre
-    update_db(get_color_name(channel_buffer[2],get_color_name[3],get_color_name[4]),genre,False)
+    update_db(get_color_name(channel_buffer[2],channel_buffer[3],channel_buffer[4]),genre,False)
+    play_anything()
 
 def receive_websockets():
     "Collects Websocket data and calls the right function"
@@ -106,11 +118,14 @@ def receive_websockets():
     socketIO.on('lampe', send_dmx_channels_with_values)
     socketIO.on('get_channel_values', get_channel_values)
     socketIO.on('rgbw_dmx',send_dmx_rgbw)
-    socketIO.on('like',like)
-    socketIO.on('dislike',dislike)
+    socketIO.on('like',like_func)
+    socketIO.on('dislike',dislike_func)
     socketIO.on('play_anything',play_anything)
     socketIO.on('pause_anything',pause_anything)
     socketIO.on('volume',music_volume)
     socketIO.on('lumi', set_lumination)
     socketIO.on('strobe', set_strobe)
     socketIO.wait()
+
+
+

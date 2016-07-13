@@ -2,4 +2,5 @@
 # Webserver config
 SERVER = 'localhost'
 PORT = 3000
-DB_PATH = 'C:\Users\Joachim\Documents\GitHub\ITS_2016\Datenbank\its_datenbank.db'
+DB_PATH = '/home/pi/ITS_2016/Scripts/python/its_datenbank.db'
+MUSIC_PATH = '/home/pi/ITS_2016/music'

@@ -4,13 +4,14 @@ from conf import *
 from threading import Thread
 #Initializing
 last_received = ''
+global channel_buffer
 channel_buffer = range(0, 128)
 for x in xrange(0, 128):
             channel_buffer[x] = 0
 
 
 ser = serial.Serial(
-    port='/dev/ttyAMA0',
+    port='/dev/serial0',
     baudrate=115200,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
@@ -50,6 +51,9 @@ def rgbw_values_to_channel_buffer(data):
     channel_buffer[4] = data[0]['b']
     channel_buffer[5] = data[0]['w']
     channel_buffer[6] = data[0]['str']
+    print 'channel buffer'
+    print channel_buffer
+
 
 def send_serial_data(channels, value):
     "Sends a values to DMX channel_buffer via Serial"
@@ -67,8 +71,9 @@ def send_rgbw():
     rgbw_channel_buffer = rgbw_channel_buffer+'&'+str(channel_buffer[6])
     ser.write(chr(13).encode('ascii'))
     ser.write(rgbw_channel_buffer+'\n')
+    print("Send RGBW DATA")
     print(rgbw_channel_buffer) 
-    print("Send RGBW DATA")     
+         
 
 
 def read_serial_data():
@@ -94,4 +99,4 @@ def receiving(seri):
             buffer_string = lines[-1]
 
 
-Thread(target=receiving, args=(ser,)).start()
+#Thread(target=receiving, args=(ser,)).start()
